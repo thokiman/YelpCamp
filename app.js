@@ -195,8 +195,9 @@ app.use((err, req, res, next) => {
 // ==================================================
 
 //PORT LISTEN
-app.listen(3000, () => {
-  console.log("local host at 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`serving on port ${port}`);
 });
 // ==================================================
 
