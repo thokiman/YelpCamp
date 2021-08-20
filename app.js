@@ -2,6 +2,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
+
+
 // console.log(
 //   "this is process.env (.env file) variable: " +
 //     process.env.CLOUDINARY_CLOUD_NAME,
@@ -32,7 +34,7 @@ const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 
 const dbURL = process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
-mongodb: mongoose.connect(dbURL, {
+ mongoose.connect(dbURL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -204,10 +206,10 @@ app.listen(port, () => {
 //testDB to page
 // app.get("/makecampground", async (req, res) => {
 //   //test DB
-//   // const camp = await new Campground({
-//   //   title: "My Backyard",
-//   //   description: " cheap camping!",
-//   // });
-//   // await camp.save();
+//   const camp = await new Campground({
+//     title: "My Backyard",
+//     description: " cheap camping!",
+//   });
+//   await camp.save();
 //   res.send(camp);
 // });
